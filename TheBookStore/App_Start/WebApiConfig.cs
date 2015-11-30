@@ -20,7 +20,7 @@ namespace TheBookStore
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
+            config.DependencyResolver = new ServiceResolver();
             config.Filters.Add(new EnforceHttpsAttribute());
             config.MessageHandlers.Add(new BasicAuthenticationHandler(new CustomPrincipalProvider()));
             config.Filters.Add(new AuthorizeAttribute());

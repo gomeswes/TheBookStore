@@ -24,8 +24,7 @@ namespace TheBookStore.Infrastructure
         {
             return (type == typeof(BookDto) || type == typeof(IEnumerable<BookDto>));
         }
-
-
+        
         public override void WriteToStream(Type type, object value, Stream writeStream, System.Net.Http.HttpContent content)
         {
             using (var writer = new StreamWriter(writeStream))

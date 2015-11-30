@@ -16,9 +16,9 @@ namespace TheBookStore.Controllers
     {
         private IUnityOfWork _unity;
 
-        public ReviewController()
+        public ReviewController(IUnityOfWork unity)
         {
-            _unity = new SampleDataStore();
+            _unity = unity;
         }
 
         public IHttpActionResult Get(int bookId)
