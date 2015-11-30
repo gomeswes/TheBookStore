@@ -10,9 +10,11 @@ namespace TheBookStore.App_Start
 {
     public static class MapsConfig
     {
+        /// <summary>
+        /// Maps all Data transfer objects to they respective model classes.
+        /// </summary>
         public static void Register()
         {
-
             Mapper.CreateMap<Book, BookDto>()
                 .ForMember(dto => dto.Authors, map => map.MapFrom(entity => entity.Authors));
 
